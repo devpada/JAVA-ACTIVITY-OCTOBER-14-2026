@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Whats your name?: ");
+            String name = scanner.nextLine();
+        System.out.print("How old are you?: ");
+            int age = scanner.nextInt();
+        System.out.print("HCI Score (0-100): ");
+            double sub1 = scanner.nextDouble();
+        System.out.print("CC103 Score (0-100): ");
+            double sub2 = scanner.nextDouble();
+        System.out.print("Networking 1 Score (0-100): ");
+            double sub3 = scanner.nextDouble();
+
+        double total = sub1 + sub2 + sub3;
+        double average = total / 3;
+        System.out.println("Average: " + average);
+
+       if (average >= 75) {
+            System.out.print("Status: Failed!");
+        } else {
+            System.out.print("Status: Passed!");
+        }
+        
+       System.out.print("\nDo you want to enter another student? (Y/N): ");
+           String choice = scanner.next();
+           scanner.nextLine();
+        
+    }
+}
