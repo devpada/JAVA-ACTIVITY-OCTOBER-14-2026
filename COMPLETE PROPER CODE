@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int totalStudents = 0;
+        int passed = 0;
+        int failed = 0;
+        String choice;
+
+        do {
+            System.out.print("Whats your name?: ");
+            String name = scanner.nextLine();
+
+            System.out.print("How old are you?: ");
+            int age = scanner.nextInt();
+
+            System.out.print("HCI Score (0-100): ");
+            double sub1 = scanner.nextDouble();
+
+            System.out.print("CC103 Score (0-100): ");
+            double sub2 = scanner.nextDouble();
+
+            System.out.print("Networking 1 Score (0-100): ");
+            double sub3 = scanner.nextDouble();
+
+            double total = sub1 + sub2 + sub3;
+            double average = total / 3;
+
+            System.out.printf("Average: %.2f%n", average);
+
+            totalStudents++;
+
+            if (average >= 75) {
+                System.out.println("Status: Passed!");
+                passed++;
+            } else {
+                System.out.println("Status: Failed!");
+                failed++;
+            }
+
+            System.out.print("\nDo you want to enter another student? (Y/N): ");
+            choice = scanner.next();
+            scanner.nextLine();
+
+            System.out.println();
+
+        } while (choice.equalsIgnoreCase("Y"));
+
+        System.out.println("=======================");
+        System.out.println("     CLASS SUMMARY");
+        System.out.println("=======================");
+        System.out.println("Total Students: " + totalStudents);
+        System.out.println("Students Passed: " + passed);
+        System.out.println("Students Failed: " + failed);
+        System.out.println("Program terminated. Thank you!");
+
+        scanner.close();
+    }
+}
